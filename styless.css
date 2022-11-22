@@ -3,7 +3,7 @@
     --titulos2: #61CE70;
     --titulos3: #8CCB51;
     --background-white: #FFF;
-    --gray: #969696;
+    --gray: rgba(150 150 150 / .8);
     --sombra: 0px 0px 10px 1px rgba(150 150 150 / .5);
 }
 * {
@@ -36,6 +36,13 @@ main {
     font-weight: 700;
     cursor: pointer;
 }
+h2 {
+    font-size: 40px;
+    font-weight: 900;
+}
+h3 {
+    font-size: 30px;
+}
 h4 {
     font-weight: 700;
 }
@@ -44,27 +51,88 @@ h4 {
     font-size: 12px;
     font-weight: 500;
 }
+.espacio-abajo { margin-bottom: 40px; }
+.p-ancho { width: 400px; }
 
 
 
-.banner-principal {
+
+
+/* ================ */
+
+.banner {
     width: 100%;
     height: auto;
     box-shadow: var(--sombra);
     margin-bottom: 50px;
 }
-.banner-principal img {
+.banner img {
     width: 100%;
     object-fit: contain;
 }
-
+.filtros {
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray);
+}
+.filtros select {
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    outline: none;
+    font-size: 14px;
+    color: var(--gray);
+}
+.filtros input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+}
+.filtros input[type="text"] {
+    padding: 6px 8px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    outline: none;
+}
+.filtros label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    column-gap: 50px;
+    row-gap: 80px;
+    margin-bottom: 100px;
+}
 .tarjeta {
     position: relative;
-    width: 290px;
+    width: 310px;
     height: 400px;
     background-color: var(--background-white);
     border-radius: 8px;
     box-shadow: var(--sombra)
+}
+.tarjeta::before {
+    position: absolute;
+    top: -50px;
+    left: -30px;
+    content: '';
+    width: 120px;
+    height: 120px;
+    background-color: var(--background-white);
+    background-image: url('./assets/img/Logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--sombra);
+    border-radius: 50%;
 }
 .tarjeta_nombre, .tarjeta_descripcion { margin-bottom: 10px;}
 .tarjeta > div { 
@@ -79,6 +147,20 @@ h4 {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+.mostrar-mas {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    margin-bottom: 100px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--titulos3);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--titulos3);
+    cursor: pointer;
+}
 .contacto, .contacto-num {
     display: flex;
     justify-content: space-between;
@@ -90,5 +172,28 @@ h4 {
 }
 .contacto-num img {
     display: inline-block;
+    margin-right: 5px;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+.footer > div {
+    width: 50%;
+    padding: 0 0 100px 150px;
+}
+.footer_logo img {
+    max-width: 250px;
+    margin-bottom: 30px;
+}
+.footer_contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.footer_contacto p:first-child { margin-bottom: 10px; }
+.footer_contacto a {
     margin-right: 5px;
 }

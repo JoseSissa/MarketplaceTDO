@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="./styless.css">
 </head>
 <body>
-    <header class="banner-principal">
+    <header class="banner">
         <img src="./assets/img/Banner principal.jpg" alt="Banner principal">
     </header>
     <main>
         <h2 class="resaltar-texto">NUEVAS MARCAS</h2>
-        <h3 class="resaltar-texto">que debes conocer</h3>
-        <p>Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
+        <h3 class="resaltar-texto espacio-abajo">que debes conocer</h3>
+        <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
             <select name="departamentos" id="departamentos">
-                <option value="todos">Todos</option>
+                <option value="todos">Departamentos</option>
                 <option value="caqueta">Caquetá</option>
                 <option value="guaviare">Guaviare</option>
                 <option value="narinio">Nariño</option>
@@ -25,18 +25,20 @@
                 <option value="putumayo">Putumayo</option>
             </select>
             <select name="municipios" id="municipios">
-                <option value="todos">Todos</option>
-                <option value="caqueta">Caquetá</option>
-                <option value="guaviare">Guaviare</option>
-                <option value="narinio">Nariño</option>
-                <option value="nortedesantander">Norte de Santander</option>
-                <option value="putumayo">Putumayo</option>
+                <option value="todos">Municipios</option>
             </select>
-            <input type="checkbox" name="producto" id="producto">
-            <label for="producto">Producto</label>
-            <input type="checkbox" name="servicio" id="servicio">
-            <label for="servicio">Servicio</label>
-            <input type="search" name="buscar" id="buscar">
+            <select name="producto-servicio" id="producto-servicio">
+                <option value="todos">Tipo de producto/servicio</option>
+            </select>
+            <label for="producto">
+                <input type="checkbox" name="producto" id="producto">
+                Producto
+            </label>
+            <label for="servicio">
+                <input type="checkbox" name="servicio" id="servicio">
+                Servicio
+            </label>
+            <input type="text" name="buscar" id="buscar" placeholder="Escribe aquí">
         </section>
         <section>
             <article class="resultados">
@@ -59,25 +61,120 @@
                         </div>
                     </div>
                 </div>
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4 class="tarjeta_nombre">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo tarjeta_descripcion">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="contacto-num subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4 class="tarjeta_nombre">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo tarjeta_descripcion">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="contacto-num subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4 class="tarjeta_nombre">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo tarjeta_descripcion">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="contacto-num subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4 class="tarjeta_nombre">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo tarjeta_descripcion">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="contacto-num subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4 class="tarjeta_nombre">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo tarjeta_descripcion">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="contacto-num subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </article>
             <button class="mostrar-mas">Mostrar más</button>
-            <article >
-                <h3 class="resaltar-texto">CONOCE MÁS SOBRE TERRITORIOS QUE MERECEN LA OPORTUNIDAD DE CRECER</h3>
-            </article>
         </section>
     </main>
-    <footer>
-        <div>
-            <h4>Territorios de OPORTUNIDAD</h4>
-            <p>Emprendimientos del sector rural que contribuyen al desarrollo y crecimiento del campo en Colombia</p>
+    <aside class="banner">
+        <img src="./assets/img/Banner-2.jpg" alt="Banner secundario">
+    </aside>
+    <footer class="footer">
+        <div class="footer_logo">
+            <img src="./assets/img/TdO-logo.png" alt="TdO logo">
+            <p class="p-ancho">Emprendimientos del sector rural que contribuyen al desarrollo y crecimiento del campo en Colombia</p>
         </div>
-        <div>
-            <p>Mantente informado</p>
+        <div class="footer_contacto">
+            <p>Mantente informado:</p>
             <div>
-                <a href="#">WAPP</a>
-                <a href="#">MAIL</a>
-                <a href="#">WORLD</a>
-                <a href="#">Face</a>
+                <a href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
+                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                <a href="#"><img src="./assets/icons/world.svg" alt="world ícono"></a>
+                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
             </div>
             <p>Copyright © 2022 Marketplace TdO</p>
         </div>
