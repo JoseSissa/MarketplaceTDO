@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Place</title>
+    <link rel="stylesheet" href="./styless.css">
+</head>
+<body>
+    <header class="banner-principal">
+        <img src="./assets/img/Banner principal.jpg" alt="Banner principal">
+    </header>
+    <main>
+        <h2 class="resaltar-texto">NUEVAS MARCAS</h2>
+        <h3 class="resaltar-texto">que debes conocer</h3>
+        <p>Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
+        <section class="filtros">
+            <select name="departamentos" id="departamentos">
+                <option value="todos">Todos</option>
+                <option value="caqueta">Caquetá</option>
+                <option value="guaviare">Guaviare</option>
+                <option value="narinio">Nariño</option>
+                <option value="nortedesantander">Norte de Santander</option>
+                <option value="putumayo">Putumayo</option>
+            </select>
+            <select name="municipios" id="municipios">
+                <option value="todos">Todos</option>
+                <option value="caqueta">Caquetá</option>
+                <option value="guaviare">Guaviare</option>
+                <option value="narinio">Nariño</option>
+                <option value="nortedesantander">Norte de Santander</option>
+                <option value="putumayo">Putumayo</option>
+            </select>
+            <input type="checkbox" name="producto" id="producto">
+            <label for="producto">Producto</label>
+            <input type="checkbox" name="servicio" id="servicio">
+            <label for="servicio">Servicio</label>
+            <input type="search" name="buscar" id="buscar">
+        </section>
+        <section>
+            <article class="resultados">
+                <div class="tarjeta">
+                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                    <div>
+                        <h4>Asociación Agropecuario de Mujeres Resilientes de José María</h4>
+                        <p class="subtitulo">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
+                        <a class="button" href="#">Portafolio de productos</a>
+                        <div class="contacto">
+                            <div>
+                                <p class="subtitulo">Contacto:</p>
+                                <a class="icono subtitulo" href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"> 3123456789</a>
+                            </div>
+                            <div>
+                                <a class="icono" href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                                <a class="icono" href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                                <a class="icono" href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <button class="mostrar-mas">Mostrar más</button>
+            <article >
+                <h3 class="resaltar-texto">CONOCE MÁS SOBRE TERRITORIOS QUE MERECEN LA OPORTUNIDAD DE CRECER</h3>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <h4>Territorios de OPORTUNIDAD</h4>
+            <p>Emprendimientos del sector rural que contribuyen al desarrollo y crecimiento del campo en Colombia</p>
+        </div>
+        <div>
+            <p>Mantente informado</p>
+            <div>
+                <a href="#">WAPP</a>
+                <a href="#">MAIL</a>
+                <a href="#">WORLD</a>
+                <a href="#">Face</a>
+            </div>
+            <p>Copyright © 2022 Marketplace TdO</p>
+        </div>
+    </footer>
+</body>
+</html>
