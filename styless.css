@@ -6,16 +6,28 @@
     --gray: rgba(150 150 150 / .8);
     --sombra: 0px 0px 10px 1px rgba(150 150 150 / .5);
 }
+@font-face {
+    font-family: 'Helvetica';
+    src: url('./assets/fonts/_Helvetica LT 93 Black Extended.ttf');
+}
+@font-face {
+    font-family: 'Circular-Black';
+    src: url('./assets/fonts/CircularStd-Black.otf');
+}
+@font-face {
+    font-family: 'Circular-Book';
+    src: url('./assets/fonts/CircularStd-Book.ttf');
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Circular-Book';
 }
 body {
     width: 100%;
     max-width: 1366px;
-    margin: 0 auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;    
 }
 main {
     padding: 0 11%;
@@ -23,36 +35,42 @@ main {
 .resaltar-texto { color: var(--titulos); }
 .button {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 4px 8px;
+    padding: 2px 8px 2px 6px;
     margin-bottom: 10px;
     border: 1px solid var(--titulos3);
-    border-radius: 8px;
+    border-radius: 4px;
     color: var(--titulos3);
     background-color: transparent;
     text-decoration: none;
-    font-size: 12px;
+    font-family: 'Circular-Black';
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
 }
+.button img { margin-right: 8px; }
 h2 {
-    font-size: 40px;
+    font-size: 36px;
+    line-height: 28px;
     font-weight: 900;
+    font-family: 'Helvetica';
 }
 h3 {
     font-size: 30px;
+    font-weight: 900;
+    font-family: 'Circular-Black';
 }
 h4 {
     font-weight: 700;
 }
 .subtitulo {
     color: var(--gray);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 .espacio-abajo { margin-bottom: 40px; }
-.p-ancho { width: 400px; }
+.p-ancho { width: 450px; }
 
 
 
@@ -76,6 +94,7 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
     color: var(--gray);
 }
 .filtros select {
@@ -91,6 +110,9 @@ h4 {
     margin-right: 8px;
     border-radius: 8px;
     border: 1px solid var(--gray);
+}
+.hola::placeholder {
+    color: var(--gray);
 }
 .filtros input[type="text"] {
     padding: 6px 8px;
@@ -134,15 +156,18 @@ h4 {
     box-shadow: var(--sombra);
     border-radius: 50%;
 }
+.tarjeta_nombre {
+    font-family: 'Circular-Black';
+}
 .tarjeta_nombre, .tarjeta_descripcion { margin-bottom: 10px;}
 .tarjeta > div { 
     height: 180px;
-    padding: 0 16px;
+    padding: 0 12px;
 }
 .tarjeta > img {
     width: 100%;
     height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -167,6 +192,7 @@ h4 {
     align-items: flex-end;
     text-decoration: none;
 }
+.contacto div:first-child a { align-items: center; }
 .contacto a {
     margin-top: 5px;
 }
@@ -179,6 +205,7 @@ h4 {
 .footer {
     display: flex;
     justify-content: space-between;
+    font-family: 'Circular-Black';
 }
 .footer > div {
     width: 50%;
@@ -193,7 +220,7 @@ h4 {
     flex-direction: column;
     justify-content: flex-end;
 }
-.footer_contacto p:first-child { margin-bottom: 10px; }
+.footer_contacto p:first-child, .footer_contacto div { margin-bottom: 10px; }
 .footer_contacto a {
     margin-right: 5px;
 }
