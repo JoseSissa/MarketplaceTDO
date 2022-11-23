@@ -15,6 +15,7 @@ departamentos.addEventListener('click', (e) => {
     }
     if(e.target.localName === 'button') {
         departamentos.children[1].innerText = e.target.innerText;
+        departamentos.classList.add('option-selected')
         resetFilters(e)
     }
 })
@@ -27,6 +28,7 @@ municipios.addEventListener('click', (e) => {
     }
     if(e.target.localName === 'button') {
         municipios.children[1].innerText = e.target.innerText;
+        municipios.classList.add('option-selected')
         resetFilters(e)
     }
 })

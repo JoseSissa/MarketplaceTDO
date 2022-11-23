@@ -154,6 +154,13 @@ h4 {
     height: 2px;
     background-color: var(--titulos);
 }
+.select span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: 'Circular-Book';
+    color: #000;
+}
 .options::-webkit-scrollbar {
     -webkit-appearance: none;
 }
@@ -174,7 +181,7 @@ h4 {
 }
 .option-selected {
     color: var(--titulos);
-    border-bottom: 1px solid var(--titulos);
+    border-bottom: 2px solid var(--titulos);
 }
 
 .contenedor::-webkit-scrollbar-track {
