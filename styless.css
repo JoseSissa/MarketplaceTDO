@@ -104,6 +104,7 @@ h4 {
     height: 24px;
     padding: 8px 8px 0 8px;
     box-sizing: content-box;
+    border: 1px solid transparent;
     border-bottom: 1px solid var(--gray);
     cursor: pointer;
 }
@@ -115,10 +116,11 @@ h4 {
     height: 0;
     overflow-y: scroll;
     margin-top: 5px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     z-index: 10;
+    scrollbar-color: var(--titulos) transparent;
 }
 .options button {
     width: 100%;
@@ -134,14 +136,49 @@ h4 {
 .activate {
     height: auto;
     max-height: 200px;
-    border: 1px solid var(--titulos2);
+    border: 1px solid var(--titulos);
     border-top: none;
 }
 .select-activate {
+    color: var(--titulos);
     border: 1px solid var(--titulos2);
     border-bottom: none;   
     border-top-left-radius: 8px; 
-    border-top-right-radius: 8px; 
+    border-top-right-radius: 8px;
+}
+.select-activate::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 170px;
+    height: 2px;
+    background-color: var(--titulos);
+}
+.options::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.options::-webkit-scrollbar:vertical {
+    width:5px;
+}
+.options::-webkit-scrollbar-button:increment,
+.options::-webkit-scrollbar-button {
+    display: none;
+}
+.options::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.options::-webkit-scrollbar-thumb {
+    background-color: var(--titulos);
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+.option-selected {
+    color: var(--titulos);
+    border-bottom: 1px solid var(--titulos);
+}
+
+.contenedor::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }
 .filtros input[type="checkbox"] {
     width: 22px;
