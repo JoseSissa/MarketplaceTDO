@@ -7,6 +7,7 @@
     <title>Marketplace TdO</title>
     <link rel="icon" href="./assets/icons/TdO_favicon.png" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="./styless.css">
+    <script src="./index.js" defer></script>
 </head>
 <body>
     <header class="banner">
@@ -17,23 +18,25 @@
         <h3 class="resaltar-texto espacio-abajo">que debes conocer</h3>
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
-            <select name="departamentos" id="departamentos">
-                <option value="todos">Departamento</option>
-                <option value="caqueta">Caquetá</option>
-                <option value="guaviare">Guaviare</option>
-                <option value="narinio">Nariño</option>
-                <option value="nortedesantander">Norte de Santander</option>
-                <option value="putumayo">Putumayo</option>
-            </select>
-            <select name="municipios" id="municipios">
-                <option value="todos">Municipio</option>
-                <option value="caqueta">Orito</option>
-                <option value="guaviare">Puerto Asis</option>
-                <option value="narinio">Puerto Caicedo</option>
-                <option value="nortedesantander">Puerto Guzman</option>
-                <option value="putumayo">San Miguel</option>
-                <option value="putumayo">Villagarzón</option>
-            </select>
+            <div class="select" id="departamentos">Departamentos
+                <div class="options" id="departamentos">
+                    <button value="caqueta">Caquetá</button>
+                    <button value="guaviare">Guaviare</button>
+                    <button value="narinio">Nariño</button>
+                    <button value="nortedesantander">Norte de Santander</button>
+                    <button value="putumayo">Putumayo</button>
+                </div>
+            </div>
+            <div class="select" id="municipios">Municipio
+                <div class="options">
+                    <button value="caqueta">Orito</button>
+                    <button value="guaviare">Puerto Asis</button>
+                    <button value="narinio">Puerto Caicedo</button>
+                    <button value="nortedesantander">Puerto Guzman</button>
+                    <button value="putumayo">San Miguel</button>
+                    <button value="putumayo">Villagarzón</button>
+                </div>
+            </div>
             <select name="producto-servicio" id="producto-servicio">
                 <option value="todos">Tipo de producto/servicio</option>
             </select>
