@@ -19,7 +19,8 @@
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
             <div class="select" id="departamentos">Departamentos
-                <div class="options" id="departamentos">
+                <div class="options">
+                    <button value="todos">Todos</button>
                     <button value="caqueta">Caquetá</button>
                     <button value="guaviare">Guaviare</button>
                     <button value="narinio">Nariño</button>
@@ -28,8 +29,9 @@
                 </div>
                 <span></span>
             </div>
-            <div class="select" id="municipios">Municipio
+            <div class="select" id="municipios">Municipios
                 <div class="options">
+                    <button value="todos">Todos</button>
                     <button value="caqueta">Orito</button>
                     <button value="guaviare">Puerto Asis</button>
                     <button value="narinio">Puerto Caicedo</button>
@@ -39,9 +41,18 @@
                 </div>
                 <span></span>
             </div>
-            <select name="producto-servicio" id="producto-servicio">
-                <option value="todos">Tipo de producto/servicio</option>
-            </select>
+            <div class="select" id="producto-servicio">Tipo de producto/servicio
+                <div class="options">
+                    <button value="todos">Todos</button>
+                    <button value="caqueta">Orito</button>
+                    <button value="guaviare">Puerto Asis</button>
+                    <button value="narinio">Puerto Caicedo</button>
+                    <button value="nortedesantander">Puerto Guzman</button>
+                    <button value="putumayo">San Miguel</button>
+                    <button value="putumayo">Villagarzón</button>
+                </div>
+                <span></span>
+            </div>
             <label for="producto">
                 <input type="checkbox" name="producto" id="producto">
                 Producto
