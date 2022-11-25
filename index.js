@@ -1,6 +1,9 @@
 const departamentos = document.getElementById("departamentos");
 const municipios = document.getElementById("municipios");
 const productoServicio = document.getElementById("producto-servicio");
+const producto = document.getElementById('producto')
+const servicio = document.getElementById('servicio')
+const buscar = document.getElementById('buscar')
 
 const changeStyles = (e) => {
     e.target.classList.toggle("select-activate");
@@ -78,3 +81,12 @@ productoServicio.addEventListener("click", (e) => {
         // filtrarProductoServicio(e.target.innerText)
     }
 });
+producto.addEventListener('click', (e) => {
+    console.log(e.target);
+})
+servicio.addEventListener('click', (e) => {
+    console.log(e.target);
+})
+buscar.addEventListener('keyup', (e) => {
+    console.log(e.target.value);
+})

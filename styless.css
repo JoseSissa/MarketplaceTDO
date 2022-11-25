@@ -288,19 +288,18 @@ h4 {
     color: var(--titulos3);
     cursor: pointer;
 }
-.contacto, .contacto-num {
+.contacto {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     text-decoration: none;
 }
 .contacto div:first-child a { align-items: center; }
+.contacto div:last-child a{
+    margin-right: 2px;
+}
 .contacto a {
     margin-top: 5px;
-}
-.contacto-num img {
-    display: inline-block;
-    margin-right: 5px;
 }
 
 
