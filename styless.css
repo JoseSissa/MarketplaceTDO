@@ -100,7 +100,7 @@ h4 {
 }
 .select {
     position: relative;
-    width: 170px;
+    width: 190px;
     height: 24px;
     padding: 8px 8px 0 8px;
     margin-right: 12px;
@@ -113,7 +113,7 @@ h4 {
     content: '';
     position: absolute;
     bottom: 0px;
-    width: 170px;
+    width: 190px;
     height: 2px;
     background-color: var(--gray);
 }
@@ -128,19 +128,19 @@ h4 {
     content: '';
     position: absolute;
     bottom: 0px;
-    width: 170px;
+    width: 190px;
     height: 2px;
     background-color: var(--titulos);
 }
 .options {
     position: relative;
-    width: 188px;
+    width: 208px;
     left: -9px;
     bottom: -2px;
     height: 0;
     overflow-y: scroll;
     margin-top: 5px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     z-index: 10;
