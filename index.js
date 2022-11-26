@@ -18,8 +18,8 @@ const requireData = async () => {
         tarjeta.innerHTML = `
             <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
             <div>
-                <h4 class="tarjeta_nombre">${elem.nombreGrupoFormalizado}</h4>
-                <p class="subtitulo tarjeta_descripcion">${elem.descripcion}</p>
+                <h4 class="tarjeta_nombre espacio">${elem.nombreGrupoFormalizado}</h4>
+                <p class="subtitulo espacio">${elem.descripcion}</p>
                 <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
                 <div class="contacto">
                     <div>
@@ -33,6 +33,9 @@ const requireData = async () => {
                         <a href="${elem.facebook}" target="_blank"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
                     </div>
                 </div>
+            </div>
+            <div>
+                <img src="./assets/img/Logo.png" alt="logo pequeño">
             </div>
         `
         fragment.appendChild(tarjeta)

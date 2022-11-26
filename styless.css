@@ -37,8 +37,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: fit-content;
+    height: 29px;
     padding: 2px 8px 2px 6px;
-    margin-bottom: 10px;
     border: 1px solid var(--titulos3);
     border-radius: 4px;
     color: var(--titulos3);
@@ -244,36 +245,46 @@ h4 {
     border-radius: 8px;
     box-shadow: var(--sombra)
 }
-.tarjeta::before {
-    position: absolute;
-    top: -50px;
-    left: -30px;
-    content: '';
-    width: 120px;
-    height: 120px;
-    background-color: var(--background-white);
-    background-image: url('./assets/img/Logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: var(--sombra);
-    border-radius: 50%;
-}
 .tarjeta_nombre {
     font-family: 'Circular-Black';
 }
-.tarjeta_nombre, .tarjeta_descripcion { margin-bottom: 10px;}
-.tarjeta > div { 
-    height: 180px;
+.tarjeta > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 188px;
     padding: 0 12px;
+}
+.tarjeta div:first-child > h4 {
+    height: 38px;
+}
+.tarjeta div:first-child > button {
+    height: 26px;
 }
 .tarjeta > img {
     width: 100%;
     height: 200px;
-    margin-bottom: 12px;
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+.tarjeta > div:last-child {
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    position: absolute;
+    top: -50px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background-color: var(--background-white);
+    box-shadow: var(--sombra);
+    border-radius: 50%;
+    
+}
+.tarjeta > div:last-child img {
+    display: block;
+    width: 100%;
 }
 .mostrar-mas {
     display: block;
@@ -289,6 +300,7 @@ h4 {
     color: var(--titulos3);
     cursor: pointer;
 }
+.espacio { height: 38px; }
 .contacto {
     display: flex;
     justify-content: space-between;
