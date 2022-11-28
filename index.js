@@ -4,43 +4,79 @@ const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
 const mostrarMas = document.getElementById('mostrar-mas');
 const resultados = document.getElementById('resultados');
-// import { prueba } from "./prueba.js";
 
-const requireData = async () => {
+const requireData = async ({ filtro, tipoFiltro } = { filtro: "todos"}) => {
+    console.log(filtro);
     const requestJson = await fetch('./data.json')
     const text = await requestJson.json()
-    console.log(text);
+
+    resultados.innerHTML = "";
+    
     const fragment = document.createDocumentFragment()
-    for (const elem of text) {
-        const tarjeta = document.createElement('DIV')
-        console.log(tarjeta);
-        tarjeta.classList.add('tarjeta')
-        tarjeta.innerHTML = `
-            <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
-            <div>
-                <h4 class="tarjeta_nombre espacio">${elem.nombreGrupoFormalizado}</h4>
-                <p class="subtitulo espacio">${elem.descripcion}</p>
-                <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
-                <div class="contacto">
-                    <div>
-                        <p class="subtitulo">Contacto:</p>
-                        <p class="subtitulo">${elem.celular}</p>
-                    </div>
-                    <div>
-                        <a href="https://wa.me/+57${elem.whatsapp}" target="_blank"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
-                        <a href="https://${elem.correo}" target="_blank"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
-                        <a href="${elem.web}" target="_blank"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
-                        <a href="${elem.facebook}" target="_blank"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+    if(filtro !== "Todos") {
+        const result = text.filter(elem => elem[tipoFiltro] === filtro)
+        console.log(result);
+        for (const elem of result) {
+            const tarjeta = document.createElement('DIV')
+            tarjeta.classList.add('tarjeta')
+            tarjeta.innerHTML = `
+                <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                <div>
+                    <h4 class="tarjeta_nombre espacio">${elem.nombreGrupoFormalizado}</h4>
+                    <p class="subtitulo espacio">${elem.descripcion}</p>
+                    <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                    <div class="contacto">
+                        <div>
+                            <p class="subtitulo">Contacto:</p>
+                            <p class="subtitulo">${elem.celular}</p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/+57${elem.whatsapp}" target="_blank"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
+                            <a href="https://${elem.correo}" target="_blank"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                            <a href="${elem.web}" target="_blank"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                            <a href="${elem.facebook}" target="_blank"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <img src="./assets/img/Logo.png" alt="logo pequeño">
-            </div>
-        `
-        fragment.appendChild(tarjeta)
+                <div>
+                    <img src="./assets/img/Logo.png" alt="logo pequeño">
+                </div>
+                `
+            fragment.appendChild(tarjeta)
+        }
+    }else {
+        console.log(text);
+        for (const elem of text) {
+            const tarjeta = document.createElement('DIV')
+            tarjeta.classList.add('tarjeta')
+            tarjeta.innerHTML = `
+                <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+                <div>
+                    <h4 class="tarjeta_nombre espacio">${elem.nombreGrupoFormalizado}</h4>
+                    <p class="subtitulo espacio">${elem.descripcion}</p>
+                    <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                    <div class="contacto">
+                        <div>
+                            <p class="subtitulo">Contacto:</p>
+                            <p class="subtitulo">${elem.celular}</p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/+57${elem.whatsapp}" target="_blank"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
+                            <a href="https://${elem.correo}" target="_blank"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
+                            <a href="${elem.web}" target="_blank"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
+                            <a href="${elem.facebook}" target="_blank"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="./assets/img/Logo.png" alt="logo pequeño">
+                </div>
+                `
+            fragment.appendChild(tarjeta)
+        }
     }
     resultados.appendChild(fragment)
+            
 }
 const changeStyles = (e) => {
     e.target.classList.toggle("select-activate");
@@ -57,10 +93,10 @@ const selectOption = (e, elem) => {
     }
 };
 const filtrarDepartamento = (departamento) => {
-    console.log(departamento);
+    requireData({ filtro: departamento, tipoFiltro: "departamento" })
 };
 const filtrarMunicipio = (municipio) => {
-    console.log(municipio);
+    requireData({ filtro: municipio, tipoFiltro: "municipio" });
 };
 const filtrarProductoServicio = (productoServicio) => {
     console.log(productoServicio);
@@ -89,8 +125,10 @@ departamentos.addEventListener("click", (e) => {
         productoServicio.children[0].classList.remove("options-activate");
         changeStyles(e);
     }
-    e.target.localName === "button" && selectOption(e, departamentos);
-    // filtrarDepartamento(e.target.innerText)
+    if(e.target.localName === "button") {
+        selectOption(e, departamentos);
+        filtrarDepartamento(e.target.innerText)
+    }
 });
 municipios.addEventListener("click", (e) => {
     if (e.target.localName === "div" && e.target.id === "municipios") {
@@ -102,7 +140,7 @@ municipios.addEventListener("click", (e) => {
     }
     if (e.target.localName === "button") {
         selectOption(e, municipios);
-        // filtrarMunicipio(e.target.innerText)
+        filtrarMunicipio(e.target.innerText)
     }
 });
 productoServicio.addEventListener("click", (e) => {
