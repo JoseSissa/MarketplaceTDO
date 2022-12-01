@@ -8,15 +8,15 @@
 }
 @font-face {
     font-family: 'Helvetica';
-    src: url('./assets/fonts/_Helvetica LT 93 Black Extended.ttf');
+    src: url('../assets/fonts/_Helvetica LT 93 Black Extended.ttf');
 }
 @font-face {
     font-family: 'Circular-Black';
-    src: url('./assets/fonts/CircularStd-Black.otf');
+    src: url('../assets/fonts/CircularStd-Black.otf');
 }
 @font-face {
     font-family: 'Circular-Book';
-    src: url('./assets/fonts/CircularStd-Book.ttf');
+    src: url('../assets/fonts/CircularStd-Book.ttf');
 }
 * {
   margin: 0;

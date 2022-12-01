@@ -1,4 +1,5 @@
-import requireData from './data.js'
+import requireData from '../data/requireData.js'
+import filters from './filters.js'
 
 const departamentos = document.getElementById("departamentos");
 const municipios = document.getElementById("municipios");
@@ -6,31 +7,38 @@ const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
 const mostrarMas = document.getElementById('mostrar-mas');
 
+let response = []
+requireData().then(res => {
+    response = res
+});
+
 const filtros = {
     departamentos: departamentos,
     municipios: municipios,
     productoServicio: productoServicio
 }
-
 const filtrarDepartamento = (departamento) => {
-    requireData({
+    filters({
         departamento: departamento,
         municipio: municipios.children[1].innerText,
-        productoServicio: productoServicio.children[1].innerText
+        productoServicio: productoServicio.children[1].innerText,
+        response
     })
 };
 const filtrarMunicipio = (municipio) => {
-    requireData({
+    filters({
         departamento: departamentos.children[1].innerText,
         municipio: municipio,
-        productoServicio: productoServicio.children[1].innerText
+        productoServicio: productoServicio.children[1].innerText,
+        response
     });
 };
 const filtrarProductoServicio = (productoServicio) => {
-    requireData({
+    filters({
         departamento: departamentos.children[1].innerText,
         municipio: municipios.children[1].innerText,
-        productoServicio: productoServicio
+        productoServicio: productoServicio,
+        response
     });
 };
 const changeStyles = (e, tipoFiltro) => {
@@ -65,7 +73,6 @@ window.addEventListener("click", (e) => {
         }
     }
 });
-
 departamentos.addEventListener("click", (e) => {
     (e.target.localName === "div" && e.target.id === "departamentos") && changeStyles(e, 'departamentos');
     if(e.target.localName === "button") {
