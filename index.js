@@ -5,7 +5,6 @@ const municipios = document.getElementById("municipios");
 const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
 const mostrarMas = document.getElementById('mostrar-mas');
-const resultados = document.getElementById('resultados');
 
 const filtros = {
     departamentos: departamentos,
@@ -14,13 +13,25 @@ const filtros = {
 }
 
 const filtrarDepartamento = (departamento) => {
-    requireData({ filtro: departamento, tipoFiltro: "departamento" })
+    requireData({
+        departamento: departamento,
+        municipio: municipios.children[1].innerText,
+        productoServicio: productoServicio.children[1].innerText
+    })
 };
 const filtrarMunicipio = (municipio) => {
-    requireData({ filtro: municipio, tipoFiltro: "municipio" });
+    requireData({
+        departamento: departamentos.children[1].innerText,
+        municipio: municipio,
+        productoServicio: productoServicio.children[1].innerText
+    });
 };
 const filtrarProductoServicio = (productoServicio) => {
-    requireData({ filtro: productoServicio, tipoFiltro: "municipio" });
+    requireData({
+        departamento: departamentos.children[1].innerText,
+        municipio: municipios.children[1].innerText,
+        productoServicio: productoServicio
+    });
 };
 const changeStyles = (e, tipoFiltro) => {
     for (const elem of Object.keys(filtros)) {
@@ -77,7 +88,7 @@ productoServicio.addEventListener("click", (e) => {
     }
 });
 
-
+// ===================================================
 buscar.addEventListener('keyup', (e) => {
     console.log(e.target.value);
 })
