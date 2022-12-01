@@ -22,6 +22,7 @@ const filtrarDepartamento = (departamento) => {
         departamento: departamento,
         municipio: municipios.children[1].innerText,
         productoServicio: productoServicio.children[1].innerText,
+        busqueda: buscar.value,
         response
     })
 };
@@ -30,6 +31,7 @@ const filtrarMunicipio = (municipio) => {
         departamento: departamentos.children[1].innerText,
         municipio: municipio,
         productoServicio: productoServicio.children[1].innerText,
+        busqueda: buscar.value,
         response
     });
 };
@@ -38,6 +40,7 @@ const filtrarProductoServicio = (productoServicio) => {
         departamento: departamentos.children[1].innerText,
         municipio: municipios.children[1].innerText,
         productoServicio: productoServicio,
+        busqueda: buscar.value,
         response
     });
 };
@@ -94,13 +97,17 @@ productoServicio.addEventListener("click", (e) => {
         filtrarProductoServicio(e.target.innerText)
     }
 });
+buscar.addEventListener('keyup', (e) => {
+    filters({
+        departamento: departamentos.children[1].innerText,
+        municipio: municipios.children[1].innerText,
+        productoServicio: productoServicio.children[1].innerText,
+        busqueda: e.target.value,
+        response
+    });
+})
 
 // ===================================================
-buscar.addEventListener('keyup', (e) => {
-    console.log(e.target.value);
-})
 mostrarMas.addEventListener('click', (e) => {
     console.log('Mostrar más');
-    // prueba()
-    // requireData()
 })

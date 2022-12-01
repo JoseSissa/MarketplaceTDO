@@ -1,6 +1,5 @@
 const resultados = document.getElementById('resultados');
-const filters = ({departamento, municipio, productoServicio, response}) => {
-    
+const filters = ({departamento, municipio, productoServicio, busqueda, response}) => {
     if(departamento !== 'Todos' && departamento !== '') {
         response = response.filter(elem => elem.departamento === departamento)
     }
@@ -9,6 +8,9 @@ const filters = ({departamento, municipio, productoServicio, response}) => {
     }
     if(productoServicio !== 'Todos' && productoServicio !== '') {
         response = response.filter(elem => elem.tipoProductoServicio === productoServicio)
+    }
+    if(busqueda !== '') {
+        response = response.filter(elem => elem.nombreGrupoFormalizado.toLowerCase().includes(busqueda.toLowerCase()))
     }
     
     resultados.innerHTML = "";
