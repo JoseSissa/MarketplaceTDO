@@ -6,7 +6,7 @@ const departamentos = document.getElementById("departamentos");
 const municipios = document.getElementById("municipios");
 const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
-const mostrarMas = document.getElementById('mostrar-mas');
+const mostrarMasResultados = document.getElementById('mostrar-mas');
 
 let response = []
 let filteredResponse = []
@@ -22,7 +22,6 @@ requireData().then(res => {
     });
     createCards({ filteredResponse, page })
 });
-
 const filtros = {
     departamentos: departamentos,
     municipios: municipios,
@@ -125,9 +124,9 @@ buscar.addEventListener('keyup', (e) => {
     });
     createCards({ filteredResponse, page })
 })
-
-// ===================================================
-mostrarMas.addEventListener('click', () => {
-    page++
-    createCards({ filteredResponse, page })
+mostrarMasResultados.addEventListener('click', () => {
+    if(filteredResponse.length > page*3) {
+        page++
+        createCards({ filteredResponse, page })
+    }
 })
