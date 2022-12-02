@@ -271,7 +271,6 @@ h4 {
 .tarjeta > div:last-child {
     display: flex;
     align-items: center;
-    padding: 0 6px;
     position: absolute;
     top: -50px;
     left: -30px;
@@ -280,11 +279,12 @@ h4 {
     background-color: var(--background-white);
     box-shadow: var(--sombra);
     border-radius: 50%;
-    
+    overflow: hidden;
 }
 .tarjeta > div:last-child img {
     display: block;
-    width: 100%;
+    width: 120%;
+    border-radius: 50%;
 }
 .mostrar-mas {
     display: block;

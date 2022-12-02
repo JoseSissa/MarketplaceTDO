@@ -1,18 +1,16 @@
 const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, page }) => {
 
     page = page * 3
-    console.log('Page before: ', page);
-    console.log(filteredResponse.length);
     if(filteredResponse.length < page) {
         page = filteredResponse.length
     }
-    console.log('Page after: ', page);
 
     const resultados = document.getElementById('resultados');
     resultados.innerHTML = "";
     const fragment = document.createDocumentFragment()
 
     for (let i = 0; i < page; i++) {
+        console.log(filteredResponse[i].id);
         const tarjeta = document.createElement('DIV')
         tarjeta.classList.add('tarjeta')
         tarjeta.innerHTML = `
@@ -35,7 +33,7 @@ const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, p
                 </div>
             </div>
             <div>
-                <img src="./assets/img/Logo.png" alt="logo pequeño">
+                <img src="./assets/logos/${filteredResponse[i].id}-logo.jpg" alt="logo pequeño">
             </div>
             `
         fragment.appendChild(tarjeta)
