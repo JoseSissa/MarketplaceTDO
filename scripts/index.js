@@ -1,5 +1,6 @@
 import requireData from '../data/requireData.js'
 import filters from './filters.js'
+import createCards from './createCards.js'
 
 const departamentos = document.getElementById("departamentos");
 const municipios = document.getElementById("municipios");
@@ -8,8 +9,18 @@ const buscar = document.getElementById('buscar');
 const mostrarMas = document.getElementById('mostrar-mas');
 
 let response = []
+let filteredResponse = []
+let page = 1
 requireData().then(res => {
-    response = res
+    response = res;
+    filteredResponse = filters({
+        departamento: '',
+        municipio: '',
+        productoServicio: '',
+        busqueda: '',
+        response,
+    });
+    createCards({ filteredResponse, page })
 });
 
 const filtros = {
@@ -18,31 +29,37 @@ const filtros = {
     productoServicio: productoServicio
 }
 const filtrarDepartamento = (departamento) => {
-    filters({
+    page = 1
+    filteredResponse = filters({
         departamento: departamento,
         municipio: municipios.children[1].innerText,
         productoServicio: productoServicio.children[1].innerText,
         busqueda: buscar.value,
         response
     })
+    createCards({ filteredResponse, page })
 };
 const filtrarMunicipio = (municipio) => {
-    filters({
+    page = 1
+    filteredResponse = filters({
         departamento: departamentos.children[1].innerText,
         municipio: municipio,
         productoServicio: productoServicio.children[1].innerText,
         busqueda: buscar.value,
         response
     });
+    createCards({ filteredResponse, page })
 };
 const filtrarProductoServicio = (productoServicio) => {
-    filters({
+    page = 1
+    filteredResponse = filters({
         departamento: departamentos.children[1].innerText,
         municipio: municipios.children[1].innerText,
         productoServicio: productoServicio,
         busqueda: buscar.value,
         response
     });
+    createCards({ filteredResponse, page })
 };
 const changeStyles = (e, tipoFiltro) => {
     for (const elem of Object.keys(filtros)) {
@@ -98,16 +115,19 @@ productoServicio.addEventListener("click", (e) => {
     }
 });
 buscar.addEventListener('keyup', (e) => {
-    filters({
+    page = 1
+    filteredResponse = filters({
         departamento: departamentos.children[1].innerText,
         municipio: municipios.children[1].innerText,
         productoServicio: productoServicio.children[1].innerText,
         busqueda: e.target.value,
         response
     });
+    createCards({ filteredResponse, page })
 })
 
 // ===================================================
-mostrarMas.addEventListener('click', (e) => {
-    console.log('Mostrar más');
+mostrarMas.addEventListener('click', () => {
+    page++
+    createCards({ filteredResponse, page })
 })
