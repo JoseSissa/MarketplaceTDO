@@ -1,0 +1,22 @@
+{
+  "name": "marketplacetdo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseSissa/MarketplaceTDO.git"
+  },
+  "author": "https://www.linkedin.com/in/josesissamendoza/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseSissa/MarketplaceTDO/issues"
+  },
+  "homepage": "https://github.com/JoseSissa/MarketplaceTDO#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
