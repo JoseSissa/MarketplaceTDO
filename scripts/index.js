@@ -7,6 +7,11 @@ const municipios = document.getElementById("municipios");
 const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
 const mostrarMasResultados = document.getElementById('mostrar-mas');
+const oculto = document.getElementById('oculto');
+
+console.log(oculto);
+console.log(JSON.parse(oculto.value));
+
 
 let response = []
 let filteredResponse = []

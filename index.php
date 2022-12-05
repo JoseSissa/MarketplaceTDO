@@ -1,3 +1,10 @@
+<?php
+
+include './database/connection.php';
+$connection = new Connection();
+$data = $connection->obtDatos();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,6 +21,7 @@
         <img src="./assets/img/Banner principal.jpg" alt="Banner principal">
     </header>
     <main>
+        <input type="hidden" id="oculto" value="" />
         <h2 class="resaltar-texto">NUEVAS MARCAS</h2>
         <h3 class="resaltar-texto espacio-abajo">que debes conocer</h3>
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
@@ -72,75 +80,6 @@
         </section>
         <section>
             <article class="resultados" id="resultados">
-                <!-- <div class="tarjeta">
-                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
-                    <div>
-                        <h4 class="tarjeta_nombre espacio">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
-                        <p class="subtitulo espacio">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
-                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
-                        <div class="contacto">
-                            <div>
-                                <p class="subtitulo">Contacto:</p>
-                                <p class="subtitulo">3123456789</p>
-                            </div>
-                            <div>
-                                <a href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
-                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
-                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
-                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./assets/img/Logo.png" alt="logo pequeño">
-                    </div>
-                </div>
-                <div class="tarjeta">
-                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
-                    <div>
-                        <h4 class="tarjeta_nombre espacio">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
-                        <p class="subtitulo espacio">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
-                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
-                        <div class="contacto">
-                            <div>
-                                <p class="subtitulo">Contacto:</p>
-                                <p class="subtitulo">3123456789</p>
-                            </div>
-                            <div>
-                                <a href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
-                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
-                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
-                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./assets/img/Logo.png" alt="logo pequeño">
-                    </div>
-                </div>
-                <div class="tarjeta">
-                    <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
-                    <div>
-                        <h4 class="tarjeta_nombre espacio">Asociación Agropecuario de Mujeres Resilientes de José María</h4>
-                        <p class="subtitulo espacio">Emprendimiento dedicado a la producción y comercialización de cachama blanca.</p>
-                        <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
-                        <div class="contacto">
-                            <div>
-                                <p class="subtitulo">Contacto:</p>
-                                <p class="subtitulo">3123456789</p>
-                            </div>
-                            <div>
-                                <a href="#"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>
-                                <a href="#"><img src="./assets/icons/email.svg" alt="Email ícono"></a>
-                                <a href="#"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>
-                                <a href="#"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./assets/img/Logo.png" alt="logo pequeño">
-                    </div>
-                </div> -->
             </article>
             <button class="mostrar-mas" id="mostrar-mas">Mostrar más</button>
         </section>
@@ -164,5 +103,9 @@
             <p>Copyright © 2022 Marketplace TdO</p>
         </div>
     </footer>
+    <script>
+        console.log(typeof JSON.stringify(<?= $data ?>));
+        document.getElementById('oculto').value = JSON.stringify(<?= $data ?>);
+    </script>
 </body>
 </html>

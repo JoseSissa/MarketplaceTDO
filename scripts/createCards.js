@@ -10,7 +10,6 @@ const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, p
     const fragment = document.createDocumentFragment()
 
     for (let i = 0; i < page; i++) {
-        console.log(filteredResponse[i].id);
         const tarjeta = document.createElement('DIV')
         tarjeta.classList.add('tarjeta')
         tarjeta.innerHTML = `
