@@ -47,7 +47,7 @@ $data = $connection->obtDatos();
                     <button value="elRetorno">El Retorno</button>
                     <button value="elTarra">El Tarra</button>
                     <button value="franciscoPizarro">Francisco Pizarro</button>
-                    <button value="lamontaña">La montaña</button>
+                    <button value="lamontaña">La montañita</button>
                     <button value="magui">Magüí</button>
                     <button value="milan">Milán</button>
                     <button value="olayaHerrera">Olaya Herrera</button>
@@ -70,8 +70,11 @@ $data = $connection->obtDatos();
             <div class="select" id="producto-servicio">Tipo de producto/servicio
                 <div class="options">
                     <button value="todos">Todos</button>
+                    <button value="artesanía">Artesanía</button>
+                    <button value="costura">Costura</button>
+                    <button value="internet">Internet</button>
                     <button value="barbacoas">Peces</button>
-                    <button value="artesania">Artesania</button>
+                    <button value="reciclaje">Reciclaje</button>
                     <button value="veterinaria">Veterinaria</button>
                 </div>
                 <span></span>
@@ -104,7 +107,6 @@ $data = $connection->obtDatos();
         </div>
     </footer>
     <script>
-        console.log(typeof JSON.stringify(<?= $data ?>));
         document.getElementById('oculto').value = JSON.stringify(<?= $data ?>);
     </script>
 </body>

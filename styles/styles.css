@@ -63,6 +63,7 @@ h3 {
     font-family: 'Circular-Black';
 }
 h4 {
+    font-size: 14px;
     font-weight: 500;
 }
 .subtitulo {
@@ -72,11 +73,6 @@ h4 {
 }
 .espacio-abajo { margin-bottom: 40px; }
 .p-ancho { width: 450px; }
-
-
-
-
-
 
 /* ================ */
 
@@ -240,7 +236,7 @@ h4 {
 .tarjeta {
     position: relative;
     width: 310px;
-    height: 400px;
+    height: 420px;
     background-color: var(--background-white);
     border-radius: 8px;
     box-shadow: var(--sombra)
@@ -252,7 +248,7 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 188px;
+    height: 198px;
     padding: 0 12px;
 }
 .tarjeta div:first-child > h4 {
@@ -263,7 +259,7 @@ h4 {
 }
 .tarjeta > img {
     width: 100%;
-    height: 200px;
+    height: 210px;
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -300,7 +296,7 @@ h4 {
     color: var(--titulos3);
     cursor: pointer;
 }
-.espacio { height: 38px; }
+.espacio { height: 50px; }
 .contacto {
     display: flex;
     justify-content: space-between;
