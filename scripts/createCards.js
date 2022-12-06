@@ -30,7 +30,7 @@ const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, p
                     <div>
                         ${filteredResponse[i].whatsapp && `<a href="https://wa.me/+57${filteredResponse[i].whatsapp}" target="_blank"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>`}
                         ${filteredResponse[i].correo && `<a href="https://${filteredResponse[i].correo}" target="_blank"><img src="./assets/icons/email.svg" alt="Email ícono"></a>`}
-                        ${filteredResponse[i].web && `<a href="${filteredResponse[i].web}" target="_blank"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>`}
+                        ${filteredResponse[i].web && `<a href="https://${filteredResponse[i].web}" target="_blank"><img src="./assets/icons/world.svg" alt="Página web ícono"></a>`}
                         ${filteredResponse[i].facebook && `<a href="${filteredResponse[i].facebook}" target="_blank"><img src="./assets/icons/facebook.svg" alt="Facebook ícono"></a>`}
                         ${filteredResponse[i].instagram && `<a href="${filteredResponse[i].instagram}" target="_blank"><img src="./assets/icons/instagram.svg" alt="Facebook ícono"></a>`}
                     </div>
