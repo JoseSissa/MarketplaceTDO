@@ -12,11 +12,10 @@ class Connection {
         if ($con->connect_error) {
             die("Error al conectar con la db: " . $con->connect_error);
         }
-        $query = "SELECT * FROM data";
+        $query = "SELECT * FROM emprendimientos";
         $datos = mysqli_query($con, $query);
 
         while($row = mysqli_fetch_assoc($datos)){
-            echo json_encode($row);
             $json[] = $row;
         };
 

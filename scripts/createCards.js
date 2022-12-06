@@ -1,5 +1,5 @@
 const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, page }) => {
-
+    console.log(filteredResponse);
     page = page * 3
     if(filteredResponse.length < page) {
         page = filteredResponse.length
@@ -15,7 +15,7 @@ const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, p
         tarjeta.innerHTML = `
             <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
             <div>
-                <h4 class="tarjeta_nombre espacio">${filteredResponse[i].nombreGrupoFormalizado}</h4>
+                <h4 class="tarjeta_nombre espacio">${filteredResponse[i].nombreEmprendimiento}</h4>
                 <p class="subtitulo espacio">${filteredResponse[i].descripcion}</p>
                 <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
                 <div class="contacto">

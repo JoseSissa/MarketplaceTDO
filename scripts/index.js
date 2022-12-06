@@ -9,24 +9,34 @@ const buscar = document.getElementById('buscar');
 const mostrarMasResultados = document.getElementById('mostrar-mas');
 const oculto = document.getElementById('oculto');
 
-console.log(oculto);
-console.log(JSON.parse(oculto.value));
+// console.log(oculto);
+// console.log(JSON.parse(oculto.value));
 
 
 let response = []
 let filteredResponse = []
 let page = 1
-requireData().then(res => {
-    response = res;
-    filteredResponse = filters({
-        departamento: '',
-        municipio: '',
-        productoServicio: '',
-        busqueda: '',
-        response,
-    });
-    createCards({ filteredResponse, page })
-});
+// requireData().then(res => {
+//     response = res;
+//     filteredResponse = filters({
+//         departamento: '',
+//         municipio: '',
+//         productoServicio: '',
+//         busqueda: '',
+//         response,
+//     });
+//     createCards({ filteredResponse, page })
+// });
+filteredResponse = filters({
+    departamento: '',
+    municipio: '',
+    productoServicio: '',
+    busqueda: '',
+    response: JSON.parse(oculto.value)
+})
+
+createCards({ filteredResponse, page })
+
 const filtros = {
     departamentos: departamentos,
     municipios: municipios,
