@@ -1,4 +1,4 @@
-const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, page }) => {
+const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filteredResponse, page, prevPage }) => {
     
     const trasnformarTexto = (texto) => {
         const primeraLetra = texto.toLowerCase().charAt(0).toUpperCase()
@@ -10,10 +10,10 @@ const createCards = ({ filteredResponse = '', page = 1 } = { filteredResponse, p
     }
 
     const resultados = document.getElementById('resultados');
-    resultados.innerHTML = "";
     const fragment = document.createDocumentFragment()
 
-    for (let i = 0; i < page; i++) {
+    for (let i = prevPage; i < page; i++) {
+        prevPage = page
         const tarjeta = document.createElement('DIV')
         tarjeta.classList.add('tarjeta')
         tarjeta.innerHTML = `
