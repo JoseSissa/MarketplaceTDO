@@ -1,6 +1,6 @@
 <?php
 
-include './database/connection.php';
+include './connection.php';
 $connection = new Connection();
 $data = $connection->obtDatos();
 

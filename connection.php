@@ -1,11 +1,16 @@
-<?php 
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 class Connection {
     public function obtDatos() {
-        $server = "localhost";
-        $user = "root";
-        $password = "";
-        $database = "marketplace";
+        $server = $_ENV["SERVER"];
+        $user = $_ENV["USER"];
+        $password = $_ENV["PASSWORD"];
+        $database = $_ENV["DATABASE"];
 
         $con = mysqli_connect($server, $user, $password, $database);
 
