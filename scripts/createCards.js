@@ -19,7 +19,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filte
         tarjeta.innerHTML = `
             <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
             <div>
-                <h4 class="tarjeta_nombre espacio">${filteredResponse[i].nombreEmprendimiento}</h4>
+                <h4 class="tarjeta_nombre espacio-title">${filteredResponse[i].nombreEmprendimiento}</h4>
                 <p class="subtitulo espacio descripcion">${trasnformarTexto(filteredResponse[i].descripcion)}</p>
                 <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
                 <div class="contacto">
