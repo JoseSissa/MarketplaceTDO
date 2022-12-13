@@ -6,9 +6,10 @@ const municipios = document.getElementById("municipios");
 const productoServicio = document.getElementById("producto-servicio");
 const buscar = document.getElementById('buscar');
 const mostrarMasResultados = document.getElementById('mostrar-mas');
+const resultados = document.getElementById('resultados');
 const oculto = document.getElementById('oculto');
 
-let response = []
+let response = JSON.parse(oculto.value)
 let filteredResponse = []
 let page = 1
 let prevPage = 0;
@@ -36,7 +37,8 @@ const filtrarDepartamento = (departamento) => {
         busqueda: buscar.value,
         response
     })
-    createCards({ filteredResponse, page })
+    resultados.innerHTML = ""
+    createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
 };
 const filtrarMunicipio = (municipio) => {
     page = 1
@@ -47,7 +49,8 @@ const filtrarMunicipio = (municipio) => {
         busqueda: buscar.value,
         response
     });
-    createCards({ filteredResponse, page })
+    resultados.innerHTML = ""
+    createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
 };
 const filtrarProductoServicio = (productoServicio) => {
     page = 1
@@ -58,7 +61,8 @@ const filtrarProductoServicio = (productoServicio) => {
         busqueda: buscar.value,
         response
     });
-    createCards({ filteredResponse, page })
+    resultados.innerHTML = ""
+    createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
 };
 const changeStyles = (e, tipoFiltro) => {
     for (const elem of Object.keys(filtros)) {
@@ -122,12 +126,13 @@ buscar.addEventListener('keyup', (e) => {
         busqueda: e.target.value,
         response
     });
-    createCards({ filteredResponse, page })
+    resultados.innerHTML = ""
+    createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
 })
 mostrarMasResultados.addEventListener('click', () => {
     if(filteredResponse.length > page*3) {
         prevPage = page * 3
         page++
-        createCards({ filteredResponse, page, prevPage })
+        createCards({ filteredResponse, page, prevPage, resultados })
     }
 })

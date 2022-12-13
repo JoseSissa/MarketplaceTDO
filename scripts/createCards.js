@@ -1,4 +1,4 @@
-const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filteredResponse, page, prevPage }) => {
+const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados = document.getElementById('resultados') } = { filteredResponse, page, prevPage, resultados }) => {
     
     const trasnformarTexto = (texto) => {
         const primeraLetra = texto.toLowerCase().charAt(0).toUpperCase()
@@ -8,10 +8,10 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filte
     if(filteredResponse.length < page) {
         page = filteredResponse.length
     }
-
-    const resultados = document.getElementById('resultados');
+    console.log(resultados.children);
     const fragment = document.createDocumentFragment()
-
+    console.log({prevPage});
+    console.log({page});
     for (let i = prevPage; i < page; i++) {
         prevPage = page
         const tarjeta = document.createElement('DIV')
@@ -21,7 +21,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filte
             <div>
                 <h4 class="tarjeta_nombre espacio-title">${filteredResponse[i].nombreEmprendimiento}</h4>
                 <p class="subtitulo espacio descripcion">${trasnformarTexto(filteredResponse[i].descripcion)}</p>
-                <button class="button"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</button>
+                ${filteredResponse[i].portafolio && `<a class="button" target="_blank" href="../assets/portafolios/${filteredResponse[i].portafolio}"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</a>`}
                 <div class="contacto">
                     <div>
                         <p class="subtitulo">Contacto:</p>
@@ -41,8 +41,10 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0 } = { filte
             </div>
             `
         fragment.appendChild(tarjeta)
-    }    
+    }
+    console.log(fragment.children);
     resultados.appendChild(fragment)
+    console.log({"Fragment agregado": resultados.children});
 }
 
 export default createCards
