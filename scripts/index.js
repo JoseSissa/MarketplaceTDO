@@ -114,7 +114,7 @@ productoServicio.addEventListener("click", (e) => {
     (e.target.localName === "div" && e.target.id === "producto-servicio") && changeStyles(e, 'productoServicio');
     if (e.target.localName === "button") {
         selectOption(e, productoServicio);
-        filtrarProductoServicio(e.target.innerText)
+        filtrarProductoServicio(e.target.value)
     }
 });
 buscar.addEventListener('keyup', (e) => {
@@ -131,7 +131,7 @@ buscar.addEventListener('keyup', (e) => {
 })
 mostrarMasResultados.addEventListener('click', () => {
     if(filteredResponse.length > page*3) {
-        prevPage = page * 3
+        prevPage = page * 9
         page++
         createCards({ filteredResponse, page, prevPage, resultados })
     }

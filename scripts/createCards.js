@@ -4,7 +4,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
         const primeraLetra = texto.toLowerCase().charAt(0).toUpperCase()
         return primeraLetra + (texto.slice(1).toLowerCase());
     }
-    page = page * 3
+    page = page * 9
     if(filteredResponse.length < page) {
         page = filteredResponse.length
     }
@@ -14,15 +14,15 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
         const tarjeta = document.createElement('DIV')
         tarjeta.classList.add('tarjeta')
         tarjeta.innerHTML = `
-            <img src="./assets/img/fondo-tarjeta.JPG" alt="Imagen de la asociación">
+            <img src="./assets/fondos-tarjetas/${filteredResponse[i].fondoTarjeta}.jpg" alt="Imagen de la asociación">
             <div>
                 <h4 class="tarjeta_nombre espacio-title">${filteredResponse[i].nombreEmprendimiento}</h4>
                 <p class="subtitulo espacio descripcion">${trasnformarTexto(filteredResponse[i].descripcion)}</p>
-                ${filteredResponse[i].portafolio && `<a class="button" target="_blank" href="../assets/portafolios/${filteredResponse[i].portafolio}"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</a>`}
+                <a class="button" target="_blank" href="./assets/portafolios/${filteredResponse[i].id}.pdf"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</a>
                 <div class="contacto">
                     <div>
                         <p class="subtitulo">Contacto:</p>
-                        <p class="subtitulo">${filteredResponse[i].celular}</p>
+                        <p class="subtitulo">${filteredResponse[i].telefono}</p>
                     </div>
                     <div>
                         ${filteredResponse[i].whatsapp && `<a href="https://wa.me/+57${filteredResponse[i].whatsapp}" target="_blank"><img src="./assets/icons/whatsapp.svg" alt="Whatsapp ícono"></a>`}
@@ -34,12 +34,11 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
                 </div>
             </div>
             <div>
-                <img src="./assets/logos/${filteredResponse[i].id}-logo.jpg" alt="logo pequeño">
+                <img src="./assets/logos/${filteredResponse[i].id}-logo.jpg" alt="Logo">
             </div>
             `
         fragment.appendChild(tarjeta)
     }
     resultados.appendChild(fragment)
 }
-
 export default createCards

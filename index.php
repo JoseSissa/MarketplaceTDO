@@ -22,8 +22,8 @@ $data = $connection->obtDatos();
     </header>
     <main>
         <input type="hidden" id="oculto" value="" />
-        <h2 class="resaltar-texto">NUEVAS MARCAS</h2>
-        <h3 class="resaltar-texto espacio-abajo">que debes conocer</h3>
+        <h2 class="resaltar-texto">MERCADO VIRTUAL</h2>
+        <h3 class="resaltar-texto espacio-abajo">de contacto para emprendimientos <br>rurales que hacen parte de <br>Territorios de Oportunidad</h3>
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
             <div class="select" id="departamentos">Departamentos
@@ -54,7 +54,7 @@ $data = $connection->obtDatos();
                     <button value="orito">Orito</button>
                     <button value="puertoAsis">Puerto Asis</button>
                     <button value="puertoCaicedo">Puerto Caicedo</button>
-                    <button value="puertoGuzman">Puerto Guzman</button>
+                    <button value="puertoGuzman">Puerto Guzmán</button>
                     <button value="robertoPayan">Roberto Payán</button>
                     <button value="sanjosedelFragua">San José del Fragua</button>
                     <button value="sanjosedelGuaviare">San José del Guaviare</button>
@@ -68,7 +68,7 @@ $data = $connection->obtDatos();
                 <span></span>
             </div>
             <div class="select" id="producto-servicio">Tipo de producto/servicio
-                <div class="options"></div>
+                <div class="options">
                     <button value="todos">Todos</button>
                     <button value="agroinsumos">Agroinsumos</button>
                     <button value="agua">Agua</button>
@@ -84,7 +84,7 @@ $data = $connection->obtDatos();
                     <button value="drogueria">Droguería</button>
                     <button value="ecoturismo">Ecoturismo</button>
                     <button value="especies">Especies</button>
-                    <button value="frutosamazonicos">Frutos Amazonicos</button>
+                    <button value="frutos amazonicos">Frutos Amazonicos</button>
                     <button value="ganaderia">Ganadería</button>
                     <button value="huevos">Huevos</button>
                     <button value="internet">Internet</button>
@@ -97,7 +97,7 @@ $data = $connection->obtDatos();
                     <button value="restaurante">Restaurante</button>
                     <button value="salsamentaria">Salsamentaria</button>
                     <button value="tienda">Tienda</button>
-                    <button value="turimosfluvial">Turismo Fluvial</button>
+                    <button value="turismo fluvial">Turismo Fluvial</button>
                     <button value="veterinaria">Veterinaria</button>
                     <button value="yuca">Yuca</button>
                 </div>
