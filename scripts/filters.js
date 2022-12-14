@@ -16,3 +16,7 @@ const filters = ({ departamento, municipio, productoServicio, busqueda, response
 }
 
 export default filters
+
+
+
+// FALTA QUITAR LOS CONSOLE.LOG

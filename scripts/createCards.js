@@ -8,10 +8,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
     if(filteredResponse.length < page) {
         page = filteredResponse.length
     }
-    console.log(resultados.children);
     const fragment = document.createDocumentFragment()
-    console.log({prevPage});
-    console.log({page});
     for (let i = prevPage; i < page; i++) {
         prevPage = page
         const tarjeta = document.createElement('DIV')
@@ -42,9 +39,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
             `
         fragment.appendChild(tarjeta)
     }
-    console.log(fragment.children);
     resultados.appendChild(fragment)
-    console.log({"Fragment agregado": resultados.children});
 }
 
 export default createCards
