@@ -23,7 +23,7 @@ $data = $connection->obtDatos();
     <main>
         <input type="hidden" id="oculto" value="" />
         <h2 class="resaltar-texto">MERCADO VIRTUAL</h2>
-        <h3 class="resaltar-texto espacio-abajo">de contacto para emprendimientos <br>rurales que hacen parte de <br>Territorios de Oportunidad</h3>
+        <h3 class="resaltar-texto espacio-abajo">de contacto para emprendimientos rurales <br>que hacen parte de Territorios de Oportunidad</h3>
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
             <div class="select" id="departamentos">Departamentos
