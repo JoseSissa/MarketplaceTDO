@@ -79,7 +79,7 @@ const selectOption = (e, elem) => {
     elem.classList.remove("select-activate");
     elem.classList.add("option-selected");
     elem.children[0].classList.remove("options-activate");
-    if (e.target.localName === "button" && e.target.value === "todos") {
+    if ((e.target.localName === "button" && e.target.value === "todos") || (e.target.localName === "button" && e.target.value === "Todos")) {
         elem.classList.remove("option-selected");
         elem.children[1].innerText = "";
     }

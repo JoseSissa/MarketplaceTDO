@@ -69,7 +69,7 @@ $data = $connection->obtDatos();
             </div>
             <div class="select" id="producto-servicio">Tipo de producto/servicio
                 <div class="options">
-                    <button value="todos">Todos</button>
+                    <button value="Todos">Todos</button>
                     <button value="agroinsumos">Agroinsumos</button>
                     <button value="agua">Agua</button>
                     <button value="apicultura">Apicultura</button>
