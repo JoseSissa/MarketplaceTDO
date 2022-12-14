@@ -68,14 +68,38 @@ $data = $connection->obtDatos();
                 <span></span>
             </div>
             <div class="select" id="producto-servicio">Tipo de producto/servicio
-                <div class="options">
+                <div class="options"></div>
                     <button value="todos">Todos</button>
-                    <button value="artesanía">Artesanía</button>
-                    <button value="costura">Costura</button>
+                    <button value="agroinsumos">Agroinsumos</button>
+                    <button value="agua">Agua</button>
+                    <button value="apicultura">Apicultura</button>
+                    <button value="artesania">Artesanía</button>
+                    <button value="aseo">Aseo</button>
+                    <button value="avicultura">Avicultura</button>
+                    <button value="bloques">Bloques</button>
+                    <button value="cacao">Cacao</button>
+                    <button value="chontaduro">Chontaduro</button>
+                    <button value="coco">Coco</button>
+                    <button value="confeccion">Confección</button>
+                    <button value="drogueria">Droguería</button>
+                    <button value="ecoturismo">Ecoturismo</button>
+                    <button value="especies">Especies</button>
+                    <button value="frutosamazonicos">Frutos Amazonicos</button>
+                    <button value="ganaderia">Ganadería</button>
+                    <button value="huevos">Huevos</button>
                     <button value="internet">Internet</button>
-                    <button value="barbacoas">Peces</button>
+                    <button value="leche">Leche</button>
+                    <button value="mariscos">Mariscos</button>
+                    <button value="panaderia">Panadería</button>
+                    <button value="piña">Piña</button>
+                    <button value="piscicultura">Piscicultura</button>
                     <button value="reciclaje">Reciclaje</button>
+                    <button value="restaurante">Restaurante</button>
+                    <button value="salsamentaria">Salsamentaria</button>
+                    <button value="tienda">Tienda</button>
+                    <button value="turimosfluvial">Turismo Fluvial</button>
                     <button value="veterinaria">Veterinaria</button>
+                    <button value="yuca">Yuca</button>
                 </div>
                 <span></span>
             </div>
