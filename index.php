@@ -104,6 +104,7 @@ $data = $connection->obtDatos();
                 <span></span>
             </div>
             <input type="text" name="buscar" id="buscar" placeholder="Escribe aquí">
+            <button class="button" id="limpiarFiltros">Limpiar Filtros</button>
         </section>
         <section>
             <article class="resultados" id="resultados">

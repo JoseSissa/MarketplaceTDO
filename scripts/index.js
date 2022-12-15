@@ -8,6 +8,7 @@ const buscar = document.getElementById('buscar');
 const mostrarMasResultados = document.getElementById('mostrar-mas');
 const resultados = document.getElementById('resultados');
 const oculto = document.getElementById('oculto');
+const limpiarFiltros = document.getElementById('limpiarFiltros');
 
 let response = JSON.parse(oculto.value)
 let filteredResponse = []
@@ -84,6 +85,41 @@ const selectOption = (e, elem) => {
         elem.children[1].innerText = "";
     }
 };
+limpiarFiltros.addEventListener('click', () => {
+    const resetearFiltros = [
+        {
+            nombre: departamentos,
+            funcion: filtrarDepartamento
+        },
+        {
+            nombre: municipios,
+            funcion: filtrarMunicipio
+        },
+        {
+            nombre: productoServicio,
+            funcion: filtrarProductoServicio
+        }
+    ]
+    for (const elem of resetearFiltros) {
+        if(elem.nombre.classList.contains("option-selected")) {
+            elem.nombre.classList.remove("option-selected");
+            elem.nombre.children[1].innerText = "";
+            elem.funcion("Todos")
+        }
+    }
+    if(buscar.value !== '') {
+        buscar.value = ""
+        filteredResponse = filters({
+            departamento: departamentos.children[1].innerText,
+            municipio: municipios.children[1].innerText,
+            productoServicio: productoServicio.children[1].innerText,
+            busqueda: buscar.value,
+            response
+        });
+        resultados.innerHTML = ""
+        createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
+    }
+})
 window.addEventListener("click", (e) => {
     if (
         e.target.id !== "departamentos" &&
