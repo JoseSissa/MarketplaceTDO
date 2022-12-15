@@ -10,6 +10,7 @@ const mostrarMasResultados = document.getElementById('mostrar-mas');
 const resultados = document.getElementById('resultados');
 const oculto = document.getElementById('oculto');
 const limpiarFiltros = document.getElementById('limpiarFiltros');
+// const copiarCorreo = document.getElementById('copiarCorreo');
 
 let response = JSON.parse(oculto.value)
 let filteredResponse = []

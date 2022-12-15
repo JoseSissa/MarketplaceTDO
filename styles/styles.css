@@ -314,7 +314,6 @@ h4 {
     margin-top: 5px;
 }
 
-
 .footer {
     display: flex;
     justify-content: space-between;
@@ -339,4 +338,7 @@ h4 {
 }
 .hide {
     display: none;
+}
+a img {
+    cursor: pointer;
 }

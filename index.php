@@ -132,6 +132,13 @@ $data = $connection->obtDatos();
         </div>
     </footer>
     <script>
+        function copiarCorreo(e) {
+            const type = 'text/plain';
+            const blob = new Blob([e], {type});
+            let data = [new ClipboardItem({[type]: blob})];
+            navigator.clipboard.write(data)
+                .then(() => window.open(`https://${e}`))
+        }
         document.getElementById('oculto').value = JSON.stringify(<?= $data ?>);
     </script>
 </body>
