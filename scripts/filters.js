@@ -2,7 +2,6 @@ const removeAccents = (text) => {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 const filters = ({ departamento, municipio, productoServicio, busqueda, response }) => {
-    console.log({ departamento, municipio, productoServicio, busqueda, response });
     if(departamento !== 'todos' && departamento !== '') {
         response = response.filter(elem => elem.departamento.toLowerCase() === departamento.toLowerCase())
     }

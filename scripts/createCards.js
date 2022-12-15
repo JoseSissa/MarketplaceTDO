@@ -1,5 +1,4 @@
-const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados = document.getElementById('resultados') } = { filteredResponse, page, prevPage, resultados }) => {    
-    console.log({ filteredResponse, page, prevPage, resultados });
+const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados = document.getElementById('resultados') } = { filteredResponse, page, prevPage, resultados }) => {
     const trasnformarTexto = (texto) => {
         const primeraLetra = texto.toLowerCase().charAt(0).toUpperCase()
         return primeraLetra + (texto.slice(1).toLowerCase());
