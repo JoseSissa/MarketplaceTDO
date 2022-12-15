@@ -18,7 +18,7 @@ const createCards = ({ filteredResponse = '', page = 1, prevPage = 0, resultados
             <div>
                 <h4 class="tarjeta_nombre espacio-title">${filteredResponse[i].nombreEmprendimiento}</h4>
                 <p class="subtitulo espacio descripcion">${trasnformarTexto(filteredResponse[i].descripcion)}</p>
-                <a class="button" target="_blank" href="./assets/portafolios/${filteredResponse[i].id}.pdf"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</a>
+                ${filteredResponse[i].pdf && `<a class="button" target="_blank" href="./assets/portafolios/${filteredResponse[i].pdf}.pdf"><img src="./assets/icons/download.svg" alt="Ícono de descarga"> Portafolio de productos</a>`}
                 <div class="contacto">
                     <div>
                         <p class="subtitulo">Contacto:</p>
