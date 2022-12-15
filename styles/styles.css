@@ -337,3 +337,6 @@ h4 {
 .footer_contacto a {
     margin-right: 5px;
 }
+.hide {
+    display: none;
+}

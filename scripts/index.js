@@ -1,5 +1,6 @@
 import filters from './filters.js'
 import createCards from './createCards.js'
+import filtrosDinamicos from './filtrosDinamicos.js'
 
 const departamentos = document.getElementById("departamentos");
 const municipios = document.getElementById("municipios");
@@ -40,6 +41,7 @@ const filtrarDepartamento = (departamento) => {
     })
     resultados.innerHTML = ""
     createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
+    filtrosDinamicos(filteredResponse, 'departamento')
 };
 const filtrarMunicipio = (municipio) => {
     page = 1
@@ -52,6 +54,7 @@ const filtrarMunicipio = (municipio) => {
     });
     resultados.innerHTML = ""
     createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
+    filtrosDinamicos(filteredResponse, 'municipio')
 };
 const filtrarProductoServicio = (productoServicio) => {
     page = 1
@@ -64,6 +67,7 @@ const filtrarProductoServicio = (productoServicio) => {
     });
     resultados.innerHTML = ""
     createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
+    filtrosDinamicos(filteredResponse, 'productoServicio')
 };
 const changeStyles = (e, tipoFiltro) => {
     for (const elem of Object.keys(filtros)) {
@@ -80,45 +84,13 @@ const selectOption = (e, elem) => {
     elem.classList.remove("select-activate");
     elem.classList.add("option-selected");
     elem.children[0].classList.remove("options-activate");
-    if ((e.target.localName === "button" && e.target.value === "todos") || (e.target.localName === "button" && e.target.value === "Todos")) {
+    if ((e.target.localName === "button" && e.target.innerText === "todos") || (e.target.localName === "button" && e.target.innerText === "Todos")) {
         elem.classList.remove("option-selected");
         elem.children[1].innerText = "";
     }
 };
 limpiarFiltros.addEventListener('click', () => {
-    const resetearFiltros = [
-        {
-            nombre: departamentos,
-            funcion: filtrarDepartamento
-        },
-        {
-            nombre: municipios,
-            funcion: filtrarMunicipio
-        },
-        {
-            nombre: productoServicio,
-            funcion: filtrarProductoServicio
-        }
-    ]
-    for (const elem of resetearFiltros) {
-        if(elem.nombre.classList.contains("option-selected")) {
-            elem.nombre.classList.remove("option-selected");
-            elem.nombre.children[1].innerText = "";
-            elem.funcion("Todos")
-        }
-    }
-    if(buscar.value !== '') {
-        buscar.value = ""
-        filteredResponse = filters({
-            departamento: departamentos.children[1].innerText,
-            municipio: municipios.children[1].innerText,
-            productoServicio: productoServicio.children[1].innerText,
-            busqueda: buscar.value,
-            response
-        });
-        resultados.innerHTML = ""
-        createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
-    }
+    location.reload();
 })
 window.addEventListener("click", (e) => {
     if (
@@ -136,21 +108,21 @@ departamentos.addEventListener("click", (e) => {
     (e.target.localName === "div" && e.target.id === "departamentos") && changeStyles(e, 'departamentos');
     if(e.target.localName === "button") {
         selectOption(e, departamentos);
-        filtrarDepartamento(e.target.innerText)
+        filtrarDepartamento((e.target.innerText).toLowerCase())
     }
 });
 municipios.addEventListener("click", (e) => {
     (e.target.localName === "div" && e.target.id === "municipios") && changeStyles(e, 'municipios');
     if (e.target.localName === "button") {
         selectOption(e, municipios);
-        filtrarMunicipio(e.target.innerText)
+        filtrarMunicipio((e.target.innerText).toLowerCase())
     }
 });
 productoServicio.addEventListener("click", (e) => {
     (e.target.localName === "div" && e.target.id === "producto-servicio") && changeStyles(e, 'productoServicio');
     if (e.target.localName === "button") {
         selectOption(e, productoServicio);
-        filtrarProductoServicio(e.target.value)
+        filtrarProductoServicio((e.target.innerText).toLowerCase())
     }
 });
 buscar.addEventListener('keyup', (e) => {
@@ -164,11 +136,12 @@ buscar.addEventListener('keyup', (e) => {
     });
     resultados.innerHTML = ""
     createCards({ filteredResponse, page: 1, prevPage: 0, resultados })
-})
+    // filtrosDinamicos(filteredResponse)
+});
 mostrarMasResultados.addEventListener('click', () => {
     if(filteredResponse.length > page*3) {
         prevPage = page * 9
         page++
         createCards({ filteredResponse, page, prevPage, resultados })
     }
-})
+});

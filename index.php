@@ -27,7 +27,7 @@ $data = $connection->obtDatos();
         <p class="espacio-abajo p-ancho">Utiliza nuestros filtros para encontrar los productos, servicios o emprendimientos de tu interés.</p>
         <section class="filtros">
             <div class="select" id="departamentos">Departamentos
-                <div class="options">
+                <div class="options" id="opciones-d">
                     <button value="todos">Todos</button>
                     <button value="caqueta">Caquetá</button>
                     <button value="guaviare">Guaviare</button>
@@ -38,7 +38,7 @@ $data = $connection->obtDatos();
                 <span></span>
             </div>
             <div class="select" id="municipios">Municipios
-                <div class="options">
+                <div class="options" id="opciones-m">
                     <button value="todos">Todos</button>
                     <button value="barbacoas">Barbacoas</button>
                     <button value="belendelosAndaquies">Belén de los Andaquíes</button>
@@ -68,7 +68,7 @@ $data = $connection->obtDatos();
                 <span></span>
             </div>
             <div class="select" id="producto-servicio">Tipo de producto/servicio
-                <div class="options">
+                <div class="options" id="opciones-ps">
                     <button value="Todos">Todos</button>
                     <button value="agroinsumos">Agroinsumos</button>
                     <button value="agua">Agua</button>

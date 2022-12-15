@@ -1,12 +1,16 @@
+const removeAccents = (text) => {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 const filters = ({ departamento, municipio, productoServicio, busqueda, response }) => {
-    if(departamento !== 'Todos' && departamento !== '') {
-        response = response.filter(elem => elem.departamento === departamento.toUpperCase())
+    console.log({ departamento, municipio, productoServicio, busqueda, response });
+    if(departamento !== 'todos' && departamento !== '') {
+        response = response.filter(elem => elem.departamento.toLowerCase() === departamento.toLowerCase())
     }
-    if(municipio !== 'Todos' && municipio !== '') {
-        response = response.filter(elem => elem.municipio === municipio.toUpperCase())
+    if(municipio !== 'todos' && municipio !== '') {
+        response = response.filter(elem => elem.municipio.toLowerCase() === municipio.toLowerCase())
     }
-    if(productoServicio !== 'Todos' && productoServicio !== '') {
-        response = response.filter(elem => elem.productoServicio === productoServicio.toLowerCase())
+    if(productoServicio !== 'todos' &&  productoServicio !== '') {
+        response = response.filter(elem => elem.productoServicio.toLowerCase() === removeAccents(productoServicio).toLowerCase())
     }
     if(busqueda !== '') {
         response = response.filter(elem => elem.nombreEmprendimiento.toLowerCase().includes(busqueda.toLowerCase()))
